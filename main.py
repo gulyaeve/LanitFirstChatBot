@@ -1,6 +1,6 @@
 import asyncio
 from aiogram import Bot, Dispatcher
-from handlers import start, any_text, sticker
+from handlers import start, any_text, sticker, hello
 from config import settings
 
 
@@ -13,6 +13,7 @@ async def main():
     # Добавляем роутеры из хэндлеров в диспетчер
     dp.include_router(start.router)
     dp.include_router(sticker.router)
+    dp.include_router(hello.router)
     dp.include_router(any_text.router)
 
     await dp.start_polling(bot)
