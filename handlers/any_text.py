@@ -1,9 +1,8 @@
-from aiogram import types
-from aiogram import F
+from aiogram import types, Router, F
 
-from main import dp
+router = Router()
 
 
-@dp.message(F.text)
+@router.message(F.text)
 async def answer_to_any_text(message: types.Message):
     await message.reply(message.text)

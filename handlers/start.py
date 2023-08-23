@@ -1,10 +1,10 @@
-from aiogram import types
-from aiogram.filters import CommandStart
+from aiogram import types, Router
+from aiogram.filters import Command
 
-from main import dp
+router = Router()
 
 
 # Хэндлер на команду старт
-@dp.message(CommandStart)
+@router.message(Command("start"))
 async def cmd_start(message: types.Message):
     await message.answer("Hello!")
