@@ -12,6 +12,9 @@ async def set_up_default_commands(bot: Bot):
                 command="/cat",
                 description="Получить рандомного кота",
             ),
-
+            types.BotCommand(
+                command="/weather",
+                description="Получить погоду",
+            ),
         ]
     )

@@ -2,7 +2,7 @@ import asyncio
 import logging
 
 from aiogram import Bot, Dispatcher
-from handlers import start, any_text, sticker, hello, cat
+from handlers import start, any_text, sticker, hello, cat, weather
 from config import settings
 from utils.commands import set_up_default_commands
 
@@ -20,11 +20,9 @@ dp.include_routers(
     sticker.router,
     hello.router,
     cat.router,
+    weather.router,
 )
 
-# dp.include_router(start.router)
-# dp.include_router(sticker.router)
-# dp.include_router(hello.router)
 dp.include_router(any_text.router)
 
 
