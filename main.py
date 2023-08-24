@@ -4,6 +4,7 @@ import logging
 from aiogram import Bot, Dispatcher
 from handlers import start, any_text, sticker, hello, cat
 from config import settings
+from utils.commands import set_up_default_commands
 
 
 # Настройка логирования
@@ -28,6 +29,7 @@ dp.include_router(any_text.router)
 
 
 async def main():
+    await set_up_default_commands(bot)
     await dp.start_polling(bot)
 
 
