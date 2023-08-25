@@ -1,9 +1,13 @@
+import logging
+
 from aiogram import types, Router
 from aiogram.filters import Command
 
 from keyboards import menu_inline_keyboard
+from middlewares.counter import LoggingMiddleware
 
 router = Router()
+router.message.middleware(LoggingMiddleware())
 
 
 # Хэндлер на команду старт

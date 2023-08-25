@@ -1,10 +1,10 @@
 import asyncio
 import logging
 
-from aiogram import Bot, Dispatcher, types
+from aiogram import Bot, Dispatcher
 from handlers import start, any_text, sticker, hello, cat, weather, inline_menu, FSM_example, cancel
 from config import settings
-from middlewares import log_update
+from middlewares import counter
 from utils.commands import set_up_default_commands
 
 
@@ -16,7 +16,6 @@ bot = Bot(token=settings.TOKEN)
 dp = Dispatcher()
 
 dp.include_router(cancel.router)
-dp.include_router(log_update.router)
 # Добавляем роутеры из хэндлеров в диспетчер
 dp.include_routers(
     start.router,
