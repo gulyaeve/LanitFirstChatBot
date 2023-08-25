@@ -16,5 +16,10 @@ async def set_up_default_commands(bot: Bot):
                 command="/weather",
                 description="Получить погоду",
             ),
+            types.BotCommand(
+                command="/cancel",
+                description="Отмена любого действия",
+            ),
+
         ]
     )
